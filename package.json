@@ -1,0 +1,45 @@
+{
+  "name": "customers-list",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node server.js",
+    "lint": "eslint src --max-warnings=0",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "prettier": "prettier --loglevel silent --write .",
+    "prepare": "husky install",
+    "husky": "yarn prettier && yarn typecheck && yarn lint"
+
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "dependencies": {
+    "axios": "0.27.2",
+    "next": "12.1.5",
+    "nextjs-progressbar": "0.0.14",
+    "nookies": "2.5.2",
+    "polished": "^4.2.2",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-feather": "2.0.9",
+    "react-toast-notifications": "2.5.1",
+    "styled-components": "5.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.29",
+    "@types/react": "18.0.8",
+    "@types/react-dom": "18.0.0",
+    "@types/styled-components": "5.1.25",
+    "@typescript-eslint/eslint-plugin": "5.21.0",
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.5",
+    "eslint-plugin-import-helpers": "1.2.1",
+    "husky": "7.0.4",
+    "prettier": "2.6.2",
+    "typescript": "4.5.5"
+  }
+}
