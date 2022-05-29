@@ -1,5 +1,5 @@
 import { ReactElement, useEffect, useRef } from 'react'
-import useClickOutside from '../../hooks/useClickOutside'
+import useClickOutside from '../../../hooks/useClickOutside'
 import * as S from './styles'
 
 type Props = {
@@ -14,8 +14,7 @@ function Modal({ children, isOpen, onClose }: Props) {
   useClickOutside(ref, () => onClose())
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) =>
-      isOpen && event.key === 'Escape' && onClose()
+    const handleKeyDown = (event: KeyboardEvent) => isOpen && event.key === 'Escape' && onClose()
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)

@@ -10,13 +10,7 @@ const Navbar = () => {
 
   return (
     <S.Nav ref={ref}>
-      <Image
-        src="/assets/logo.svg"
-        height="25px"
-        width="25px"
-        alt="logo"
-        priority
-      />
+      <Image src="/assets/logo.svg" height="25px" width="25px" alt="logo" priority />
 
       <Toggle
         name="isDarkMode"

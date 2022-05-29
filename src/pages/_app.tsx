@@ -33,11 +33,7 @@ function MyApp({
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <ToastProvider
-          autoDismiss
-          autoDismissTimeout={5000}
-          placement="top-center"
-        >
+        <ToastProvider autoDismiss autoDismissTimeout={5000} placement="top-center">
           <GlobalStyles />
           <NextNprogress
             color={lightTheme.colors.primary}

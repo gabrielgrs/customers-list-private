@@ -6,7 +6,7 @@ export const Input = styled.input`
     width: 100%;
     border: none;
     background: transparent;
-    /* border-bottom: solid ${theme.colors.silver} 1px; */
+    border-bottom: solid #ccc 1px;
     transition: 0.4s;
     color: ${theme.colors.black};
 

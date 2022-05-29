@@ -1,9 +1,12 @@
 {
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "jest": true,
+    "node": true
+  },
   "extends": ["next", "next/core-web-vitals"],
-  "plugins": [
-    "eslint-plugin-import-helpers",
-    "@typescript-eslint/eslint-plugin"
-  ],
+  "plugins": ["eslint-plugin-import-helpers", "@typescript-eslint/eslint-plugin"],
   "rules": {
     "no-unused-vars": "off",
     "no-console": "error",

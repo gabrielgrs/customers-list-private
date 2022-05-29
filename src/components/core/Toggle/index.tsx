@@ -10,12 +10,7 @@ type Props = {
 function Toggle({ name, checked, onChange }: Props) {
   return (
     <S.Toggle checked={checked} tabIndex={0}>
-      <S.Checkbox
-        name={name}
-        type="checkbox"
-        onChange={onChange}
-        checked={checked}
-      />
+      <S.Checkbox name={name} type="checkbox" onChange={onChange} checked={checked} />
     </S.Toggle>
   )
 }
