@@ -11,7 +11,7 @@
     "prettier": "prettier --loglevel silent --write .",
     "prepare": "husky install",
     "test": "jest --maxWorkers=50%",
-    "husky": "yarn prettier && yarn typecheck && yarn lint && yarn test"
+    "husky": "yarn prettier && yarn typecheck && yarn lint"
   },
   "engines": {
     "node": ">=14.0.0",
