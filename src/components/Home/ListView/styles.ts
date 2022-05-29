@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 
-const fromLeft = keyframes`
+export const fromLeft = keyframes`
   from {
     transform: translateX(-100vh);
   }
@@ -10,7 +10,7 @@ const fromLeft = keyframes`
   }
 `
 
-const fromRight = keyframes`
+export const fromRight = keyframes`
   from {
     transform: translateX(100vh);
   }
@@ -20,12 +20,12 @@ const fromRight = keyframes`
   }
 `
 
-const Item = styled.div`
+export const Item = styled.div`
   border: solid 1px #ccc;
   padding: 32px;
 `
 
-const Grid = styled.div`
+export const Grid = styled.div`
   display: grid;
   overflow-x: hidden;
 
@@ -40,20 +40,3 @@ const Grid = styled.div`
     animation: ${fromRight} 1s;
   }
 `
-
-type Customer = {
-  id: string
-  login: string
-}
-
-const Index = ({ items }: { items: Customer[] }) => {
-  return (
-    <Grid>
-      {items.map((customer) => (
-        <Item key={customer.id}>{customer.login}</Item>
-      ))}
-    </Grid>
-  )
-}
-
-export default Index

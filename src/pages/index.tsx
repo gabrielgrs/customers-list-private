@@ -1,38 +1,8 @@
-import type { NextPage } from 'next'
+import { NextPage } from 'next'
 import { useCallback, useEffect, useState } from 'react'
 import { useToasts } from 'react-toast-notifications'
-import styled from 'styled-components'
-import { List, Grid } from 'react-feather'
 import { getCustomers } from '../api/customers'
-import GridView from './GridView'
-import ListView from './ListView'
-
-const Main = styled.main`
-  padding: 32px 3%;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-`
-
-const Actions = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  gap: 16px;
-`
-
-const LoadMoreButton = styled.div``
-
-const ActionButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid 1px #ccc;
-  background: none;
-  color: ${({ theme }) => theme.colors.black};
-  height: 24px;
-  width: 24px;
-  border-radius: 3px;
-`
+import Home from '../components/Home'
 
 type Customer = {
   id: string
@@ -64,19 +34,12 @@ const Index: NextPage = () => {
   }, [onFetch, page])
 
   return (
-    <Main>
-      <Actions>
-        <ActionButton onClick={() => setGridStyle('cards')}>
-          <Grid size={20} />
-        </ActionButton>
-        <ActionButton onClick={() => setGridStyle('list')}>
-          <List size={20} />
-        </ActionButton>
-      </Actions>
-      {gridStyle === 'cards' && <ListView items={customers} />}
-      {gridStyle === 'list' && <GridView items={customers} />}
-      <LoadMoreButton onClick={() => setPage((p) => p + ITEMS_PER_PAGE)}>Load More</LoadMoreButton>
-    </Main>
+    <Home
+      customersList={customers}
+      gridType={gridStyle}
+      onChangeGridType={setGridStyle}
+      onLoadMore={() => setPage((p) => p + ITEMS_PER_PAGE)}
+    />
   )
 }
 
